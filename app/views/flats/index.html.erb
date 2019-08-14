@@ -1,0 +1,12 @@
+<h1> Flats </h1>
+
+<% @flats.each do |flat| %>
+<ul>
+  <li>
+    <%=flat.name %>
+    <%= flat.address %>
+    <%= flat.price_per_night %>
+    <i class="fas fa-user-friends"></i> <%= flat.number_of_guests %>
+  </li>
+</ul>
+<% end %>
