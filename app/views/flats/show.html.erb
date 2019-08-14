@@ -1,0 +1,18 @@
+
+<img src="https://source.unsplash.com/random" style="width: 100%">
+<class class="container d-flex flex-column justify-content-center">
+
+  <div class="card-body">
+    <h1> <%= @flat.name %></h1>
+    <h4 class="card-title"> <%= @flat.address %> </h4>
+  </div>
+
+  <div class="card-body">
+  <p> <%= @flat.description %> </p>
+  <p> <%= @flat.price_per_night %> <i class="fas fa-euro-sign"> </i></p>
+  <p><i class="fas fa-user-friends"></i><%= @flat.number_of_guests %></p>
+  </div>
+
+<%= link_to "Back to flat list", flats_path, class: "btn btn-primary" %>
+</class>
+

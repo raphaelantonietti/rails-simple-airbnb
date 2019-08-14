@@ -1,12 +1,27 @@
-<h1> Flats </h1>
+<div class="container">
 
-<% @flats.each do |flat| %>
-<ul>
-  <li>
-    <%=flat.name %>
-    <%= flat.address %>
-    <%= flat.price_per_night %>
-    <i class="fas fa-user-friends"></i> <%= flat.number_of_guests %>
-  </li>
-</ul>
-<% end %>
+  <h1> Flats </h1>
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+    <div class="col-4">
+      <div class="container d-inline">
+          <div class="card" style="width: 18rem;">
+             <div class="card-body">
+                <h4 class="card-title"> <%=flat.name %> </h3>
+                <h6 class="card-subtitle mb-2 text-muted"> <%= flat.address %></h6>
+               <p> <%= flat.price_per_night %> <i class="fas fa-euro-sign"></i><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %></p>
+                <p class="card-link"> <%= link_to "More info", flat_path(flat) %> <%= link_to "Edit", edit_flat_path(flat)%>
+                <%= link_to "Remove", flat_path(flat), method: :delete, data: { confirm: "Are your sure?"} %></p>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Add a flat", new_flat_path %>
+</div>
